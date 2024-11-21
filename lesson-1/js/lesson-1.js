@@ -29,7 +29,7 @@ console.log(isStudent);
 //? Вивести цей рядок в консоль.
 
 //! Код виконаного завдання
-const myString = "Життя - це те, що з тобою відбувається, поки ти плануєш інше.";
+const myString = "Зміни — закон життя. І ті, хто дивиться тільки в минуле чи лише на сьогодення, пропустять майбутнє.";
 console.log(myString);
 
 
@@ -60,14 +60,18 @@ const userName = prompt("Введіть своє ім'я:");
 if (userName) {
   const userConfirmation = confirm("Ви хочете зберегти це ім'я?");
   if (userConfirmation) {
-    nameDisplayElement.textContent = `Привіт, ${userName} 🫶!`;
+    nameDisplayElement.textContent =`Вітаю, ${userName}!`;
+    nameDisplayElement.classList.add("green");
+    alert("Ім'я успішно збережено на головну сторінку!");
   } else {
-    nameDisplayElement.textContent = `А не треба було відміняти імʼя 😒 ${userName}`;
+    nameDisplayElement.textContent = `Ви не зберегли імʼя`;
+    nameDisplayElement.classList.add("red");
   }
 } else {
-  nameDisplayElement.textContent = "А треба було вводити імʼя 😤";
-}
-
+  nameDisplayElement.textContent = "Ви не ввели імʼя";
+  nameDisplayElement.classList.add("red");
+  alert("До наступного разу!")
+} 
 
 
 

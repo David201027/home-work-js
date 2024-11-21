@@ -2,14 +2,58 @@
 
 body {
     background-color: #fffbda;
+    font-family: 'Roboto';
+}
+
+#body-one{
+    padding: 30px;
 }
 
 .title-main {
     text-align: center;
     line-height: 4em;
     color: darkred;
+    font-size: 100px;
+}
+
+.title-lesson{
+    text-align: center;
+    font-weight: bold;
+    font-size: 80px;
+    color: blue;
+}
+.title-smal{
+    text-align: center;
+    font-size: 100px;
+}
+.green{
+    color: green;
+} 
+.red{
+    color: red;
 }
 
 .list {
-    margin-left: 4em;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-link{
+    color: deepskyblue;
+}
+.link-to-main{
+    text-decoration: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 90px;
+    height: 45px;
+    color: brown;
+    background-color: lightblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
