@@ -1,10 +1,7 @@
 console.log('Lesson-3 JS');
-// Створення змінних
-let myFavoriteActor = "Sean Connery"; // Ваш улюблений актор
-let male = "my favorite actor's name"; // Опис: актор або актриса
+let myFavoriteActor = "Sean Connery";
+let male = "my favorite actor's name";
 
-// Отримання останнього символу
-let lastCharacter = myFavoriteActor.slice(-1).toUpperCase(); // Беремо останній символ та перетворюємо його на велику літеру
+let lastCharacter = myFavoriteActor.slice(-1).toUpperCase();
 
-// Виведення результату в консоль
 console.log(`The last letter in ${male} ${myFavoriteActor} is '${lastCharacter}'!`);
