@@ -69,6 +69,16 @@ else if (password.length < 6) {
 } 
 
 else {
-  alert("Дані введені правильно. Перенаправлення...");
-  location.href = "./example.html";
+  console.log(`Ваше імʼя`, name)
+  console.log(`Ваша пошта`, email)
+  console.log(`Ваш пароль`, password)
+
+    let proceed = confirm("Бажаєте перейти на іншу сторінку?");
+  
+    if (proceed) {
+      location.href = "./example.html";
+    } else {
+      alert("Як забажаете 😉👌");
+    }
+  
 }
