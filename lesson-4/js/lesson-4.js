@@ -36,7 +36,7 @@ if (isNaN(number1) || isNaN(number2)) {
 const javaScript = prompt("Введіть текст:");
 
 if (javaScript.includes("JavaScript") || javaScript.includes("javascript") || javaScript.includes("JS") || javaScript.includes("js")) {
-  alert("Текст містить слово JavaScript");
+  alert("Текст містить слово JavaScript, javascript, JS, js");
   console.log(`Текст містить слово JavaScript`)
 } else {
   alert("Текст не містить слово JavaScript");
