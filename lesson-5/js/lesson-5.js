@@ -236,11 +236,15 @@ switch(math) {
   case '/' :
     result = number1 / number2;
      break;
-  default: colorSwitch = 'Ви не вибрали знак';
+  default: result = 'Ви не вибрали знак';
 }
 
 if (result === Infinity) {
   result = 0;
+}
+
+else if (result === 'Ви не вибрали знак') {
+  console.log('Ви не вибрали знак')
 }
 
 else if (result === undefined){
@@ -248,5 +252,5 @@ else if (result === undefined){
 }
 
 else {
-  console.log('Результат:', result)
+  console.log('Результат: %c' + result, 'background-color: pink; color: blue;');
 }
