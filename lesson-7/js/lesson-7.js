@@ -9,11 +9,11 @@ console.log(
 
 const array1 = [1, 2, 3];
 
-console.log('Масив:', array1)
+console.log('Масив 1:', array1)
 
 array1[1] = array1[1] + 10;
 
-console.log('Масив після додавання:', array1)
+console.log('Масив 1 після додавання:', array1)
 
 console.log("-------------------------------------------");
 
@@ -80,13 +80,13 @@ console.log(
   "%c [5] ",
   "color: yellow; background-color: #2274A5",
 );
-const array5 = ['apple', 'cap', 'phone', 'banana', 'pen'];
+const array5 = ['elefant', 'cap', 'javascript', 'bananas', 'pen'];
 
 console.log('Масив 5: ', array5)
 
 console.log('Слова в яких більше 5 букв ↵')
 for (let i = 0; i < array5.length; i+=1) {
-  if (array5[i].length >= 5) {
+  if (array5[i].length > 5) {
       console.log(array5[i]);
   }
 }
