@@ -1,0 +1,1 @@
+console.warn(`Присвоєння за значенням і за посиланням (Урок-JS-08): \n ${(window.location.href.split('/')).slice(0, -2).join('/') + '/'}${"lesson-FE3_08/lesson-FE3_08.html"}`);

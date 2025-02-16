@@ -119,7 +119,7 @@ console.log(
   "color: yellow; background-color: #2274A5",
 );
 
-const array7 = [1, 15, 38, 23, 101, 67, 46, 89, 54, 92];
+const array7 = [2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 console.log('Масив 7: ', array7)
 console.log('Всі парні числа в масиві 7 ↵')
 
