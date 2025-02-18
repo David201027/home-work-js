@@ -52,11 +52,9 @@ console.log(
 //? наприклад, рush(), splice(), concat() або інші методи.
 
 const cards = [];
-cards.push('Картка-1');
-cards.push('Картка-2');
-cards.push('Картка-3');
-cards.push('Картка-4');
-cards.push('Картка-5');
+for (let i = 1; i < 6; i+=1) {
+    cards.push(`Картка-${i}`);
+}
 console.log(cards)
 
 console.log("---------------------------------------------");
