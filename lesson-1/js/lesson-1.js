@@ -55,22 +55,22 @@ console.log(myNull);
 //! Код виконаного завдання
 const nameDisplayElement = document.getElementById("userNameDisplay");
 
-const userName = prompt("Введіть своє ім'я:");
+const userName = prompt("Напиши своё имя:");
 
 if (userName) {
-  const userConfirmation = confirm("Ви хочете зберегти це ім'я?");
+  const userConfirmation = confirm("Хочешь сохронить это имя?");
   if (userConfirmation) {
-    nameDisplayElement.textContent =`Вітаю, ${userName}!`;
+    nameDisplayElement.textContent =`Привет, ${userName} ྀིྀ!`;
     nameDisplayElement.classList.add("green");
-    alert("Ім'я успішно збережено на головну сторінку!");
+    alert("Имя сохранено!");
   } else {
-    nameDisplayElement.textContent = `Ви не зберегли імʼя`;
+    nameDisplayElement.textContent = `Ты не сохранила имя`;
     nameDisplayElement.classList.add("red");
   }
 } else {
-  nameDisplayElement.textContent = "Ви не ввели імʼя";
+  nameDisplayElement.textContent = "Ты не написала имя";
   nameDisplayElement.classList.add("red");
-  alert("До наступного разу!")
+  alert("Увидимся!")
 } 
 
 
@@ -80,11 +80,11 @@ if (userName) {
 //? Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!".
 
 //! Код виконаного завдання
-const userConfirmation = confirm("Ти правда бажаеш зайти?");
+const userConfirmation = confirm("Точно хочешь зайти?");
 if (userConfirmation) {
-  alert("Точно?");
+  alert("Уверена?");
 } else {
-  alert("Дію відмінено!");
+  alert("Отмена!");
 }
 
 
@@ -94,10 +94,10 @@ if (userConfirmation) {
 //? Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!"
 
 //! Код виконаного завдання
-alert("Попереджаю тебе: ця сторінка може бути небеспечною!");
-const dangerConfirmation = confirm("Ти впевнений, що хочеш зайти?");
+alert("Эта страница может быть опасной!");
+const dangerConfirmation = confirm("Ты уверена что хочешь зайти?");
 if (dangerConfirmation) {
-  alert("Будь обережний ⛔️!");
+  alert("Будь осторожна ⛔️!");
 } else {
-  alert("Дію відмінено!");
+  alert("Отмена!");
 }
