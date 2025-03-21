@@ -66,7 +66,10 @@ function generatesRandomNumber(min, max) {
 
 const min = 1;
 const max = 10;
-const randomNumber = 5; 
+let randomNumber;
+do {
+  randomNumber = Number(prompt('Введіть число від 1 до 10'));
+} while (isNaN(randomNumber) || randomNumber < min || randomNumber > max);
 
 console.log(guessNumber(min, max, randomNumber, generatesRandomNumber));
 
@@ -93,6 +96,23 @@ console.log(
 //? перетворення випадкового числа від 1 до 5 від функції convertSize.
 //! Код виконаного завдання
 
+const getUserNumber = () => {
+  let number;
+  do {
+      const userInput = prompt("Введите число от 1 до 5:");
+      number = Number(userInput);
+  } while (isNaN(number) || number < 1 || number > 5);
+  return number;
+};
+
+const convertSize = (num) => `${num}px`;
+
+const convertUserNumberSize = (numberFunc, convertFunc) => convertFunc(numberFunc());
+
+console.log(convertUserNumberSize(getUserNumber, convertSize));
+
+
+
 console.log("--------------------------------------------------");
 
 
@@ -101,17 +121,18 @@ console.log(
     "%c [4] ",
     "color: yellow; background-color: #2274A5",
 );
-//? Напиши функцію, applyCallbackToEachElement яка приймає масив чисел і колбек-функцію.
-//? Функція повинна застосовувати колбек-функцію
-//? до кожного елементу масиву та повертати новий масив,
-//? що містить результати застосування колбек-функції до кожного елементу.
-//! Код виконаного завдання
-const applyCallbackToEachElement = (array, callback) => {
-    //todo: написати тіло функції
-};
+// ? Напиши функцію, applyCallbackToEachElement яка приймає масив чисел і колбек-функцію.
+// ? Функція повинна застосовувати колбек-функцію
+// ? до кожного елементу масиву та повертати новий масив,
+// ? що містить результати застосування колбек-функції до кожного елементу.
+// ! Код виконаного завдання
+const applyCallbackToEachElement = (array, callback) => array.map(callback);
+
 const array = [1, 2, 3, 4, 5];
-// const squareCallback = ; //todo: написати код функції
+const squareCallback = (num) => num * num;
+
 const result = applyCallbackToEachElement(array, squareCallback);
 console.log("result:", result); //! [1, 4, 9, 16, 25]
+
 
 console.log("--------------------------------------------------");

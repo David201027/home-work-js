@@ -131,9 +131,7 @@ while (true) {
   }
 
   const number = Number(input);
-  if (!isNaN(Number(number))) {
-    alert(`Ви ввели пробіли або пустий рядок.`);
-  } else if (isNaN(number)) {
+  if (isNaN(number)) {
     alert('Було введено не число, спробуйте ще раз.');
   } 
   else {
