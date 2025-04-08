@@ -64,6 +64,13 @@ console.log(". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .");
 //todo: Крок-2
 console.log('Крок-2');
 
+items.forEach(element => {
+    const h2 = element.querySelector('h2').textContent;
+    const elementsCount = element.querySelectorAll('ul > li').length;
+    console.log(`Категорія: ${h2} 
+Кількість елементів: ${elementsCount}`)
+});
+
 console.log("----------------------------------------------------------------");
 
 
