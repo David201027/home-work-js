@@ -235,4 +235,4 @@ raitingButton.addEventListener("click", function() {
 
 console.log(movie)
 
-console.log("--------------------------------------------------");
+console.log("--------------------------------------------------"); 

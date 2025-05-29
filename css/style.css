@@ -5,6 +5,11 @@ body {
     font-family: 'Roboto';
 }
 
+.tables{
+    display: flex;
+    flex-direction: row;
+}
+
 #body-one{
     padding: 30px;
 }
@@ -15,7 +20,9 @@ body {
     color: darkred;
     font-size: 100px;
 }
-
+.tr-double{
+    max-height: 30px;
+}
 .title-lesson{
     text-align: center;
     font-weight: bold;
