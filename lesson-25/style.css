@@ -110,6 +110,7 @@ body {
   height: auto;
   max-height: 100vh;
   max-width: 100vw;
+  border-radius: 10px;
 }
 
 .lightbox__button {
