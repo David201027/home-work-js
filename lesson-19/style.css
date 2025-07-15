@@ -1,0 +1,15 @@
+#validation-input {
+    border: 3px solid #bdbdbd;
+    outline: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#validation-input.valid {
+    border-color: #4caf50;
+}
+
+#validation-input.invalid {
+    border-color: #f44336;
+}
