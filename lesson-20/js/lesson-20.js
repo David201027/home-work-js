@@ -92,7 +92,7 @@ console.log(
 */
 //! Код виконаного завдання
 const gallery = document.querySelector('.gallery');
-const scrollAmount = 320;
+const scrollAmount = 300;
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') {
