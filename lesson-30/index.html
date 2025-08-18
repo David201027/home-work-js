@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite Mini App</title>
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Vite Mini App</h1>
+      <p id="greet"></p>
+      <p>Sum(2, 3) = <span id="sum"></span></p>
+      <p>Area circle r=5 = <span id="area"></span></p>
+
+      <button id="lazyBtn">Load lazy module</button>
+      <div id="lazyOut"></div>
+
+      <h3>Todos (JSON import)</h3>
+      <ul id="todoList"></ul>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
