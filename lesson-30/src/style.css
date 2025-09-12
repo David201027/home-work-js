@@ -1,4 +1,0 @@
-body { font-family: system-ui, sans-serif; padding: 20px; }
-#app { max-width: 640px; }
-button { padding: 8px 12px; cursor: pointer; }
-.done { text-decoration: line-through; opacity: .7; }

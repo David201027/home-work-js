@@ -1,0 +1,181 @@
+:root{
+  --accent:#1976d2;
+  --danger:#e53935;
+  --glass-bg: rgba(255,255,255,0.7);
+}
+
+/* Загальна стилізація */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  min-height:100vh;
+  background: linear-gradient(180deg,#e9eef3,#cfd8dc);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+}
+
+/* Контент */
+.app{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+h1{
+  margin:0;
+  font-size:20px;
+  color:#222;
+}
+
+/* Кнопки */
+button{
+  border:0;
+  cursor:pointer;
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:600;
+}
+
+.primary-btn{
+  background:var(--accent);
+  color:white;
+}
+
+.danger-btn{
+  background:var(--danger);
+  color:white;
+}
+
+.secondary-btn{
+  background:rgba(0,0,0,0.08);
+  color:#111;
+}
+
+/* Список студентів */
+#students-list{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+/* Картка студента (glassmorphism) */
+.student-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.08);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.student-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(16,24,40,0.12);
+}
+
+.student-info h3{
+  margin:0 0 6px 0;
+  font-size:16px;
+}
+
+.student-info p{
+  margin:0;
+  font-size:13px;
+  color:#222;
+  opacity:0.85;
+  line-height:1.4;
+}
+
+.student-actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* Модал */
+.modal{
+  display:none; /* ПРИХОВАНО за замовчуванням */
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+}
+
+.modal[aria-hidden="false"]{
+  display:flex;
+}
+
+/* Модальне вікно з формою */
+.modal-content{
+  width:420px;
+  max-width:92%;
+  background: rgba(255,255,255,0.75);
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Підтвердження видалення */
+.confirm-content{
+  width:320px;
+  max-width:90%;
+  background: rgba(255,255,255,0.85);
+  border-radius:12px;
+  padding:18px;
+  text-align:center;
+  box-shadow:0 10px 36px rgba(2,6,23,0.18);
+}
+
+.confirm-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:12px;
+}
+
+/* Форма */
+#student-form{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+#student-form input{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.08);
+  font-size:14px;
+}
+
+/* Дії форми */
+.form-actions{
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+}
+
+/* Адаптив */
+@media (max-width:520px){
+  .modal-content{ width:92% }
+  .student-card{ flex-direction:column; align-items:flex-start }
+  .student-actions{ width:100%; justify-content:flex-end }
+}
