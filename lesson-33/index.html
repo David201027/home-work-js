@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Студенти</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <h1>Список студентів</h1>
+    <button id="add-student-btn">Додати студента</button>
+
+    <ul id="students-list"></ul>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 id="modal-title">Додати студента</h2>
+        <form id="student-form">
+          <input type="hidden" id="student-id" />
+          <label>Ім'я: <input id="firstName" required /></label>
+          <label>Прізвище: <input id="lastName" required /></label>
+          <label>Вік: <input type="number" id="age" required /></label>
+          <label>Курс: <input id="course" required /></label>
+          <label>Факультет: <input id="faculty" required /></label>
+
+          <div class="modal-actions">
+            <button type="submit">Зберегти</button>
+            <button type="button" id="cancel-btn">Скасувати</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
