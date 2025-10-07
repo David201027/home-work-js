@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Студенти</title>
-    <link rel="stylesheet" href="./src/style.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <h1>Список студентів</h1>
@@ -30,6 +32,17 @@
         </form>
       </div>
     </div>
-    <script type="module" src="./src/main.js"></script>
-  </body>
+    <script id="student-template" type="text/x-handlebars-template">
+  <li class="student-card" data-id="{{id}}">
+    <h3>{{firstName}} {{lastName}}</h3>
+    <p>Вік: {{age}}</p>
+    <p>Курс: {{course}}</p>
+    <p>Факультет: {{faculty}}</p>
+    <button class="edit-btn">Edit</button>
+    <button class="delete-btn">Delete</button>
+  </li>
+</script>
+
+<script src="./src/main.js"></script>
+</body>
 </html>

@@ -1,17 +1,19 @@
-import studentTemplate from "./templates/template-student-data.hbs?raw";
-
 let dataArray = [];
 const studentsList = document.getElementById("students-list");
-
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
 const form = document.getElementById("student-form");
 const addBtn = document.getElementById("add-student-btn");
 const cancelBtn = document.getElementById("cancel-btn");
 
+// шаблон із HTML
+const templateSource = document.getElementById("student-template").innerHTML;
+const template = Handlebars.compile(templateSource);
+
+// Ініціалізація
 function initApp() {
   if (!localStorage.getItem("students")) {
-    fetch("/students.json")
+    fetch("students.json")
       .then((res) => res.json())
       .then((data) => {
         dataArray = data;
@@ -37,16 +39,14 @@ function getNextId() {
 
 function updateStorage() {
   try {
-    const dataJSON = JSON.stringify(dataArray);
-    localStorage.setItem("students", dataJSON);
+    localStorage.setItem("students", JSON.stringify(dataArray));
   } catch (err) {
-    alert("Помилка при збереженні даних у JSON!");
+    alert("Помилка при збереженні у JSON!");
   }
 }
 
 function renderList() {
   studentsList.innerHTML = "";
-  const template = Handlebars.compile(studentTemplate);
   dataArray.forEach((student) => {
     studentsList.innerHTML += template(student);
   });
@@ -74,7 +74,7 @@ addBtn.addEventListener("click", () => {
   openModal("Додати студента");
 });
 
-cancelBtn.addEventListener("click", () => closeModal());
+cancelBtn.addEventListener("click", closeModal);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -91,14 +91,14 @@ form.addEventListener("submit", (e) => {
 
   try {
     JSON.stringify(student);
-  } catch (err) {
-    alert("Некоректні дані, не вдалося зберегти!");
+  } catch {
+    alert("Некоректні дані!");
     return;
   }
 
   if (id) {
-    const index = dataArray.findIndex((s) => s.id == id);
-    dataArray[index] = student;
+    const i = dataArray.findIndex((s) => s.id == id);
+    dataArray[i] = student;
   } else {
     dataArray.push(student);
   }
@@ -111,14 +111,12 @@ form.addEventListener("submit", (e) => {
 function onEdit(e) {
   const id = e.target.closest("li").dataset.id;
   const student = dataArray.find((s) => s.id == id);
-
   document.getElementById("student-id").value = student.id;
   document.getElementById("firstName").value = student.firstName;
   document.getElementById("lastName").value = student.lastName;
   document.getElementById("age").value = student.age;
   document.getElementById("course").value = student.course;
   document.getElementById("faculty").value = student.faculty;
-
   openModal("Редагувати студента");
 }
 
