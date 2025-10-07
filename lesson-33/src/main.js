@@ -11,7 +11,7 @@ const template = Handlebars.compile(templateSource);
 
 function initApp() {
   if (!localStorage.getItem("students")) {
-    fetch("lesson-33/public/students.json")
+    fetch("/home-work-js/lesson-33/public/students.json")
   .then(response => {
     if (!response.ok) {
       throw new Error("Не вдалося завантажити students.json");
