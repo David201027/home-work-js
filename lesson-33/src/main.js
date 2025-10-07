@@ -1,4 +1,5 @@
-import Handlebars from "handlebars";
+import Handlebars from "handlebars/dist/handlebars.js";
+
 import studentTemplate from "./templates/template-student-data.hbs?raw";
 
 let dataArray = [];
