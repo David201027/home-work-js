@@ -6,11 +6,9 @@ const form = document.getElementById("student-form");
 const addBtn = document.getElementById("add-student-btn");
 const cancelBtn = document.getElementById("cancel-btn");
 
-// шаблон із HTML
 const templateSource = document.getElementById("student-template").innerHTML;
 const template = Handlebars.compile(templateSource);
 
-// Ініціалізація
 function initApp() {
   if (!localStorage.getItem("students")) {
     fetch("students.json")
