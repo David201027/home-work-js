@@ -11,15 +11,18 @@ const template = Handlebars.compile(templateSource);
 
 function initApp() {
   if (!localStorage.getItem("students")) {
-    fetch("/students.json")
+    fetch("./students.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Не вдалося завантажити students.json");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("JSON успішно завантажено:", data);
+  })
+  .catch(error => console.error("Помилка завантаження students.json:", error));
 
-      .then((res) => res.json())
-      .then((data) => {
-        dataArray = data;
-        updateStorage();
-        renderList();
-      })
-      .catch((err) => console.error("Помилка завантаження students.json:", err));
   } else {
     try {
       dataArray = JSON.parse(localStorage.getItem("students"));
