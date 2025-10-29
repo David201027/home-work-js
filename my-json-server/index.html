@@ -1,73 +1,75 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo Cards</title>
+  <title>Список Завдань</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Todo Cards</h1>
-    
+    <h1>Список Завдань</h1>
+
     <div class="controls">
-      <button id="fetchBtn">Fetch Posts</button>
-      <button id="addBtn">Добавить карточку</button>
-      <input type="number" id="postsPerPage" placeholder="Постов на странице (1-10)" min="1" max="10">
-      <input type="number" id="pageNumber" placeholder="Номер страницы (1-20)" min="1" max="20">
-      <input type="text" id="searchInput" placeholder="Поиск по ключевому слову">
+      <button id="fetchBtn">Оновити дані</button>
+      <button id="addBtn">Додати картку</button>
+      <input type="number" id="postsPerPage" placeholder="Карток на сторінці (1-10)" min="1" max="10">
+      <input type="number" id="pageNumber" placeholder="Номер сторінки (1-20)" min="1" max="20">
+      <input type="text" id="searchInput" placeholder="Пошук за назвою">
     </div>
 
     <div id="dataList"></div>
 
     <div class="pagination">
-      <button id="btnPrev">Prev</button>
+      <button id="btnPrev">Назад</button>
       <span id="pageInfo"></span>
-      <button id="btnNext">Next</button>
+      <button id="btnNext">Вперед</button>
     </div>
   </div>
+
   <div id="editModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Редактировать карточку</h2>
+      <h2>Редагувати картку</h2>
       <form id="editForm">
-        <label>User ID:</label>
+        <label for="userId">ID користувача:</label>
         <input type="number" id="userId" name="userId" required>
 
-        <label>Post ID:</label>
+        <label for="id">ID картки:</label>
         <input type="number" id="id" name="id" required>
 
-        <label>Title:</label>
+        <label for="title">Назва:</label>
         <input type="text" id="title" name="title" required>
 
-        <label>Completed:</label>
+        <label for="completed">Статус:</label>
         <select id="completed" name="completed">
-          <option value="true">True</option>
-          <option value="false">False</option>
+          <option value="true">Виконано</option>
+          <option value="false">Не виконано</option>
         </select>
 
-        <button type="submit" class="save-btn">Сохранить</button>
+        <button type="submit" class="save-btn">Зберегти</button>
       </form>
     </div>
   </div>
+
   <div id="addModal" class="modal">
     <div class="modal-content">
-      <span class="close add-close">&times;</span>
-      <h2>Добавить карточку</h2>
+      <span class="add-close">&times;</span>
+      <h2>Додати картку</h2>
       <form id="addForm">
-        <label>User ID:</label>
-        <input type="number" id="addUserId" required>
+        <label for="addUserId">ID користувача:</label>
+        <input type="number" id="addUserId" name="addUserId" required>
 
-        <label>Title:</label>
-        <input type="text" id="addTitle" required>
+        <label for="addTitle">Назва:</label>
+        <input type="text" id="addTitle" name="addTitle" required>
 
-        <label>Completed:</label>
-        <select id="addCompleted">
-          <option value="false">False</option>
-          <option value="true">True</option>
+        <label for="addCompleted">Статус:</label>
+        <select id="addCompleted" name="addCompleted">
+          <option value="true">Виконано</option>
+          <option value="false">Не виконано</option>
         </select>
 
-        <button type="submit" class="save-btn">Добавить</button>
+        <button type="submit" class="save-btn">Додати</button>
       </form>
     </div>
   </div>

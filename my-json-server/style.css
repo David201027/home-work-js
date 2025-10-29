@@ -144,6 +144,10 @@ h1 {
   to { transform: scale(1); opacity: 1; }
 }
 
+.add-close:hover{
+    cursor: pointer;
+}
+
 .close {
   color: #888;
   float: right;

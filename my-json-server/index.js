@@ -50,23 +50,21 @@ function renderPosts() {
     div.className = "card";
     div.innerHTML = `
       <h3>${card.title}</h3>
-      <p>User ID: ${card.userId}</p>
-      <p>Post ID: ${card.id}</p>
-      <p>Completed: ${card.completed}</p>
-      <p>Comments: ${card.comments ? card.comments.join(", ") : ""}</p>
-      <button class="comment-btn">Добавить комментарий</button>
-      <button class="edit-btn">Редактировать</button>
-      <button class="delete-btn">Удалить</button>
+      <p>ID користувача: ${card.userId}</p>
+      <p>ID картки: ${card.id}</p>
+      <p>Статус: ${card.completed ? "Виконано" : "Не виконано"}</p>
+      <p>Коментарі: ${card.comments ? card.comments.join(", ") : ""}</p>
+      <button class="comment-btn">Додати коментар</button>
+      <button class="edit-btn">Редагувати</button>
+      <button class="delete-btn">Видалити</button>
     `;
     dataList.appendChild(div);
 
-  
     div.querySelector(".delete-btn").onclick = async () => {
       await fetch(`${API_URL}/${card.id}`, { method: "DELETE" });
       await fetchData();
     };
 
-  
     div.querySelector(".edit-btn").onclick = () => {
       editingCard = card;
       openModal(modal);
@@ -76,9 +74,8 @@ function renderPosts() {
       editForm.completed.value = card.completed;
     };
 
-  
     div.querySelector(".comment-btn").onclick = async () => {
-      const comment = prompt("Введите комментарий:");
+      const comment = prompt("Введіть коментар:");
       if (comment) {
         const updatedComments = [...(card.comments || []), comment];
         await fetch(`${API_URL}/${card.id}`, {
@@ -95,14 +92,13 @@ function renderPosts() {
 }
 
 function updatePagination(totalPages) {
-  pageInfo.textContent = `Страница ${currentPage} / ${totalPages}`;
+  pageInfo.textContent = `Сторінка ${currentPage} / ${totalPages}`;
   btnPrev.disabled = currentPage <= 1;
   btnNext.disabled = currentPage >= totalPages;
 }
 
 btnPrev.onclick = () => { if (currentPage > 1) { currentPage--; renderPosts(); } };
 btnNext.onclick = () => { currentPage++; renderPosts(); };
-
 searchInput.oninput = () => { currentPage = 1; renderPosts(); };
 fetchBtn.onclick = fetchData;
 
